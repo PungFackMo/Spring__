@@ -1,3 +1,4 @@
+//src/main/java
 package com.example;
 
 import org.springframework.boot.SpringApplication;
@@ -7,18 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @SpringBootApplication
-public class SpringDemoApplication {
+public class SpringDemo1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDemoApplication.class, args);
+		SpringApplication.run(SpringDemo1Application.class, args);
 	}
 	
-	@GetMapping(value="/")
-	public String HelloWorld() {
-		return "Hello World!";
+	@GetMapping(value="/test")
+	public UserDto test() {
+		UserDto userDto=new UserDto();
+		userDto.setName("김자바");
+		userDto.setAge(20);
+		System.out.println(userDto.toString());
+		return userDto;
 	}
-	
-	//우측 클릭 > run as > spring boot app
-	//localhost:8080 브라우저 주소창에서 접속
 
 }
+//우클릭 > run as > spring boot app
